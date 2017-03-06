@@ -1,17 +1,58 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class="container">
+  <ion-slides class="slides-container" pager>
+    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image">
+      <!--<div style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%), url({{slide.studentImage}});background-size: cover; z-index: 1000;">-->
+        <h1 class="student-spotlight"> Student Spotlight </h1>
+        <h2 class="slide-student" >{{slide.studentName}}</h2>
+        <p class="slide-studentSchool">{{slide.studentSchool}}</p>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="cards">
+    <ion-card class="ion-card" *ngFor="let card of cards">
+    <ion-card-content>
+      <ion-card-title>
+        {{card.cardTitle}}
+      </ion-card-title>
+      <p>
+        {{card.cardContent}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-left>
+          {{card.cardProgramType}}
+        </button>
+      </ion-col>
+
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='share-alt'></ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
+   </ion-card>
+ </div>
+
+   <!--<div class="cards">
+    <ion-card class="ion-card" *ngFor="let card of cards">
+      <ion-card-header>
+        {{card.cardTitle}}
+      </ion-card-header>
+      <ion-card-content>
+       {{card.cardContent}}
+     </ion-card-content>
+   </ion-card>
+ </div>-->
+
+
+
+ 
+
 </ion-content>
