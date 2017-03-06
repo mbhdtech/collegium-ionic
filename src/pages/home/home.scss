@@ -1,25 +1,24 @@
-.container{
-background-color: black;
+.container {
+  background-color: black;
 }
-
 
 /***************************
 ****************************
 SLIDE ICONS
 ****************************
 ***************************/
+
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
-.swiper-container-horizontal > .swiper-pagination-bullets {
-bottom: 2%;
-left: 0;
-width: 100%;
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 2%;
+  left: 0;
+  width: 100%;
 }
 
-.swiper-pagination-bullet{
-background-color: orange;
-border-radius: 100%;
-
+.swiper-pagination-bullet {
+  background-color: orange;
+  border-radius: 100%;
 }
 
 /***************************
@@ -27,62 +26,46 @@ border-radius: 100%;
           SLIDES 
 ****************************
 ***************************/
-.slides-container{
+
+.slides-container {
   height: 60%;
 }
 
 .student-spotlight-image {
-background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%), url('https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg');
-// background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 100%, rgba(0, 0, 0, 0.65) 100%), url('{{slide.studentImage}}');
-background-size: cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%), url('https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg');
+  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 100%, rgba(0, 0, 0, 0.65) 100%), url('{{slide.studentImage}}');
+  background-size: cover;
 }
 
-// .student-spotlight-container {
-//   background: url("https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg");
-//   background-size: cover;
-//   height: 70%;
-//   padding-left: 3%;
-//   vertical-align: text-bottom;
-// }
-
 .slide-zoom {
-height: 100%;
-text-align: left;
-margin-bottom: 0%;
-padding-bottom: 0%;
+  height: 100%;
+  text-align: left;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
 }
 
 .student-spotlight {
-z-index: 100;
-margin: 0;
-text-align: center;
-color: #fff;
-text-shadow: 1px 1px black;
-font-size: 250%;
-} 
+  z-index: 100;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px black;
+  font-size: 250%;
+}
 
 .slide-student {
-padding-top: 45%;
-padding-left: 3%;
-margin: 0%;
-color: #fff;
-text-shadow: 1px 1px black;
-font-size: 200%;
+  padding-top: 45%;
+  padding-left: 3%;
+  margin: 0%;
+  color: #fff;
+  text-shadow: 1px 1px black;
+  font-size: 200%;
 }
 
-.slide-studentSchool{
-padding-left: 3%;
-margin: 0%;
-color: white;
-text-shadow: 1px 1px black;
-font-size: 120%;
-}
-
-/***************************
-****************************
-          CARDS
-****************************
-***************************/
-
-.cards{
+.slide-studentSchool {
+  padding-left: 3%;
+  margin: 0%;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 120%;
 }
