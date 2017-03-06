@@ -1,32 +1,30 @@
 <ion-header>
-
 </ion-header>
 
 <ion-content class="container">
   <ion-slides class="slides-container" pager>
-    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image">
-      <!--<div style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%), url({{slide.studentImage}});background-size: cover; z-index: 1000;">-->
+    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image" (click)="openSlideContentsPage();">
       <h1 class="student-spotlight"> Student Spotlight </h1>
       <h2 class="slide-student">{{slide.studentName}}</h2>
       <p class="slide-studentSchool">{{slide.studentSchool}}</p>
     </ion-slide>
   </ion-slides>
 
-    <div class="cards">
-    <ion-card class="ion-card" *ngFor="let test of tests" (click)="openTestContentsPage(test);">
+  <div class="cards">
+    <ion-card class="ion-card" *ngFor="let card of cards" (click)="openCardContentsPage();">
       <ion-card-content>
         <ion-card-title>
-          <!--{{test.cardTitle}}-->
+          {{card.cardTitle}}
         </ion-card-title>
         <p>
-          <!--{{test.cardContent}}-->
+          {{card.cardContent}}
         </p>
       </ion-card-content>
 
       <ion-row no-padding>
         <ion-col>
           <button ion-button clear small color="primary" icon-left>
-          <!--{{test.cardProgramType}}-->
+          {{card.cardProgramType}}
         </button>
         </ion-col>
 
@@ -39,6 +37,7 @@
       </ion-row>
     </ion-card>
   </div>
+</ion-content>
 
 
 <!--BACKUP CODE -->
@@ -71,4 +70,3 @@
   </div>-->
 
 
-</ion-content>

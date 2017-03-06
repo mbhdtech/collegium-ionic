@@ -1,23 +1,78 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {contentPage} from '../contentPage/contentPage';
 
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
+  templateUrl: '../content/content.html',
 
 })
 
+export class ContentPage {
+  card;
+  slide;
+
+  constructor(params: NavParams) {
+    this.card = params.data.card;
+    this.slide = params.data.slide;
+  }
+}
+
+@Component({
+  template: `
+<ion-header>
+</ion-header>
+
+<ion-content class="container">
+  <ion-slides class="slides-container" pager>
+    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image" (click)="openSlideContentsPage();">
+      <h1 class="student-spotlight"> Student Spotlight </h1>
+      <h2 class="slide-student">{{slide.studentName}}</h2>
+      <p class="slide-studentSchool">{{slide.studentSchool}}</p>
+    </ion-slide>
+  </ion-slides>
+
+
+
+  <div class="cards">
+    <ion-card class="ion-card" *ngFor="let card of cards" (click)="openCardContentsPage();">
+      <ion-card-content>
+        <ion-card-title>
+          {{card.cardTitle}}
+        </ion-card-title>
+        <p>
+          {{card.cardContent}}
+        </p>
+      </ion-card-content>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="primary" icon-left>
+          {{card.cardProgramType}}
+        </button>
+        </ion-col>
+
+        <ion-col text-right>
+          <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='share-alt'></ion-icon>
+          Share
+        </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>
+`
+})
 
 export class HomePage {
-    constructor(public navCtrl: NavController) {
-  }  
 
-  contentPage = this.contentPage;
-  
+  slides = [];
+  cards = [];
 
-    slides = [
+  constructor(public nav: NavController) {
+
+    this.slides = [
     {
       studentName: "Mekhi Jones",
       studentSchool: "Stanford University",
@@ -35,7 +90,7 @@ export class HomePage {
     }
   ];
 
-  cards = [
+  this.cards = [
     {
       cardTitle: "All Star Code Summer Intensive opens",
       cardContent: "All Star Code empowers young men with the skills, networks, and mindsets they need.",
@@ -69,6 +124,17 @@ export class HomePage {
     },
 
   ]
+}
+
+  openSlideContentsPage(){
+    console.log("clicked");
+    // this.nav.push(ContentPage, {slide: slide});
+  }
+
+  openCardContentsPage() {
+    this.nav.push(ContentPage);
+    // this.nav.push(ContentPage, {card: card });
+  }
 
 }
 

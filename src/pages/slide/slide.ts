@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
 /*
-  Generated class for the Content page.
+  Generated class for the Slide page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-content',
-  templateUrl: 'content.html'
+  selector: 'page-slide',
+  templateUrl: 'slide.html'
 })
-export class ContentPage {
+export class SlidePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContentPage');
+    console.log('ionViewDidLoad SlidePage');
   }
 
 }
