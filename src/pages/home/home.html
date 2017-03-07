@@ -4,7 +4,7 @@
 
 <ion-content class="container">
   <ion-slides class="slides-container" pager>
-    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image">
+    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image" (click)="presentModal(slide);">
         <h1 class="student-spotlight"> Student Spotlight </h1>
         <h2 class="slide-student" >{{slide.studentName}}</h2>
         <p class="slide-studentSchool">{{slide.studentSchool}}</p>
