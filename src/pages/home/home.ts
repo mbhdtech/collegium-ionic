@@ -76,12 +76,7 @@ export class HomePage {
     modal.present();
   }
 
-    // viewSlide(slide){
-    //   this.navCtrl.push(SlidesPage, {
-    //     slide: slide
-    //   })
-    // }
-    viewCard(card){
+ viewCard(card){
     this.navCtrl.push(CardsPage,{
       card: card
     });
