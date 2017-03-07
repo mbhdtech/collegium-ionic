@@ -72,7 +72,9 @@ export class HomePage {
   }
 
 ionViewDidLoad(){
-  this.ProgramService.getLocalData();
+  this.ProgramService.getProgramsLocalData();
+  this.ProgramService.getScholarshipLocalData();
+  this.ProgramService.getStudentsLocalData();
 }
 
   doRefresh(refresher) {

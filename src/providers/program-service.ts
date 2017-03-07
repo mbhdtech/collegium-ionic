@@ -13,15 +13,22 @@ export class ProgramService {
     console.log('Hello ProgramService Provider');
   }
 
-  getLocalData() {
-    // console.log(this.http.get('../../www/data/programs.json'));
-
-    this.http.get('data/programs.json').subscribe(data => {
+  getProgramsLocalData() {
+    this.http.get('data/programs.json').map(res => res.json()).subscribe(data => {
       console.log(data);
     });
   }
 
-// https://www.reddit.com/r/gifs/top/.json?limit=10&sort=hot
+  getScholarshipLocalData() {
+    this.http.get('data/scholarships.json').map(res => res.json()).subscribe(data => {
+      console.log(data);
+    });
+  }
 
+  getStudentsLocalData() {
+    this.http.get('data/students.json').map(res => res.json()).subscribe(data => {
+      console.log(data);
+    });
+  }
 
 }
