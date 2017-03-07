@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { CardsPage } from '../cards/cards';
 import { SlidesPage } from '../slides/slides';
-
+import { ProgramService } from '../../providers/program-service'
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
+
 export class HomePage {
 
       slides = [
@@ -66,24 +67,13 @@ export class HomePage {
     },
 
   ]
-
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-    //     for (let i = 0; i < 5; i++) {
-    //   this.cards.push( this.cards );
-    // }
-  //     doInfinite(infiniteScroll) {
-  //   console.log('Begin async operation');
-
-  //   setTimeout(() => {
-  //     for (let i = 0; i < 30; i++) {
-  //       this.items.push( this.items.length );
-  //     }
-
-  //     console.log('Async operation has ended');
-  //     infiniteScroll.complete();
-  //   }, 500);
-  // }
+  
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public ProgramService: ProgramService )  {
   }
+
+ionViewDidLoad(){
+  this.ProgramService.getLocalData();
+}
 
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
