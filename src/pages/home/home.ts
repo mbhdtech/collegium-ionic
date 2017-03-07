@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
+import { CardsPage } from '../cards/cards';
+
 
 @Component({
   selector: 'page-home',
@@ -8,12 +9,14 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-    slides = [
+  constructor(public navCtrl: NavController) {
+
+  }
+      slides = [
     {
       studentName: "Mekhi Jones",
       studentSchool: "Stanford University",
-      // studentImage: "background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%), url(https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg);background-size: cover;",
-            studentImage: "https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg')",
+      studentImage: "https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg')",
     },
     {
       studentName: "Devon Howell",
@@ -58,9 +61,8 @@ export class HomePage {
     },
 
   ]
-
-  constructor(public navCtrl: NavController) {
-
+    viewCard(card){
+    this.navCtrl.push(CardsPage)
   }
 
 }

@@ -8,15 +8,17 @@ import { NavController, NavParams } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-cards',
   templateUrl: 'cards.html'
 })
 export class CardsPage {
+  card: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public params: NavParams) {
+    this.card = params.get('card');
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CardsPage');
+    console.log(this.card);
   }
 
 }
