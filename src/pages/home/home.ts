@@ -77,16 +77,25 @@ export class HomePage {
     },
 
   ]
+
+  students: any;
   
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public ProgramService: ProgramService )  {
   }
 
-ionViewDidLoad(){
-  this.ProgramService.getProgramsLocalData();
-  this.ProgramService.getScholarshipLocalData();
-  this.ProgramService.getStudentsLocalData();
+ngOnInit(){
+  this.getStudentsLocalData();
+  // this.ProgramService.getProgramsLocalData();
+  // this.ProgramService.getScholarshipLocalData();
 }
 
+getStudentsLocalData(){
+  this.ProgramService.getStudentsLocalData().subscribe(response => {
+    this.students = response;
+  })
+}
+
+//Refreshes Page
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
 
@@ -95,6 +104,8 @@ ionViewDidLoad(){
       refresher.complete();
     }, 2000);
   }
+
+  //Presents student success story when slide clicked 
     presentModal(slide) {
     let modal = this.modalCtrl.create(SlidesPage, {
       slide: slide
@@ -102,14 +113,17 @@ ionViewDidLoad(){
     modal.present();
   }
 
+//Shows article when card clicked
  viewCard(card){
     this.navCtrl.push(CardsPage,{
       card: card
     });
   }
 
+//Sends article to save later
   sendToProfile(card){
-    console.log('I hope you work');
+    console.log('I hope you work')
   }
 
 }
+
