@@ -33,7 +33,17 @@ export class HomePage {
       studentSchool: "Stanford University",
       studentImage: "https://i.imgur.com/JcUzEYg.jpg",
       studentStory: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper, lacus ut tempus semper, dolor lectus dictum mi, sed pretium dolor sem non nisi. Nulla semper, quam et efficitur lacinia, mi urna rhoncus leo, et pharetra risus velit ac quam. Duis vel nisi vitae purus suscipit egestas vitae sit amet metus. Fusce ac quam at sem tempor commodo. Curabitur vel nisl ac nulla faucibus laoreet. Proin hendrerit finibus efficitur. Sed vehicula, lectus sit amet iaculis feugiat, ipsum nisl semper eros, nec dictum sapien felis sagittis augue. Donec a vestibulum leo. Phasellus in sapien eu neque dapibus scelerisque eu tincidunt ipsum. Duis fringilla felis elit, in pretium magna elementum sed. Nulla ac erat vestibulum, commodo felis quis, dignissim ex. Maecenas in nisl blandit, imperdiet diam vitae, sagittis arcu.",
+    },
+    {
+      studentName: "John Abreu",
+      studentNameAndCity: "John, NYC",
+      studentSchool: "Boston College",
+      studentImage: "http://johnabreu.me/img/GoTo%20Prof.png",
+      studentStory: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper, lacus ut tempus semper, dolor lectus dictum mi, sed pretium dolor sem non nisi. Nulla semper, quam et efficitur lacinia, mi urna rhoncus leo, et pharetra risus velit ac quam. Duis vel nisi vitae purus suscipit egestas vitae sit amet metus. Fusce ac quam at sem tempor commodo. Curabitur vel nisl ac nulla faucibus laoreet. Proin hendrerit finibus efficitur. Sed vehicula, lectus sit amet iaculis feugiat, ipsum nisl semper eros, nec dictum sapien felis sagittis augue. Donec a vestibulum leo. Phasellus in sapien eu neque dapibus scelerisque eu tincidunt ipsum. Duis fringilla felis elit, in pretium magna elementum sed. Nulla ac erat vestibulum, commodo felis quis, dignissim ex. Maecenas in nisl blandit, imperdiet diam vitae, sagittis arcu.",
     }
+
+
+    
   ];
 
   cards = [
@@ -96,6 +106,10 @@ ionViewDidLoad(){
     this.navCtrl.push(CardsPage,{
       card: card
     });
+  }
+
+  sendToProfile(card){
+    console.log('I hope you work');
   }
 
 }

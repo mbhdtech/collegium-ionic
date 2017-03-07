@@ -5,15 +5,16 @@
     <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <ion-slides class="slides-container" pager>
-    <ion-slide *ngFor="let slide of slides" class="student-spotlight-image" (click)="presentModal(slide);">
-                <h1 class="student-spotlight"> Student Spotlight </h1>
-               <h2 class="slide-student">{{slide.studentName}}</h2>
-              <p class="slide-studentSchool">{{slide.studentSchool}}</p>
+  <h1 class="studentSpotlight"> Student Spotlight </h1>
+  <ion-slides class="slidesContainer" pager>
+    <ion-slide *ngFor="let slide of slides" (click)="presentModal(slide);">
+              <img class="studentImage" src={{slide.studentImage}} >
+              <h2 class="studentName">{{slide.studentName}}</h2>
+              <p class="studentSchool">{{slide.studentSchool}}</p>
 
     </ion-slide>
   </ion-slides>
-
+  
   <div class="cards">
     <ion-card class="ion-card" *ngFor="let card of cards" (click)="viewCard(card);">
     <ion-card-content>
@@ -33,7 +34,7 @@
       </ion-col>
 
       <ion-col text-right>
-        <button ion-button clear small color="primary" icon-left>
+        <button ion-button clear small color="primary" icon-left (click)="sendToProfile(card)">
           <ion-icon name='share-alt'></ion-icon>
           Share
         </button>

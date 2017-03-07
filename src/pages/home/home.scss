@@ -19,7 +19,6 @@ width: 100%;
 .swiper-pagination-bullet{
 background-color: orange;
 border-radius: 100%;
-
 }
 
 /***************************
@@ -27,12 +26,34 @@ border-radius: 100%;
       STUDENT SLIDES 
 ****************************
 ***************************/
-.slides-container{
+
+.studentSpotlight {
+position: absolute;
+z-index: 100;
+margin: 0;
+padding-top: 2%;
+left: 5%;
+color: #fff;
+text-shadow: 1px 1px black;
+font-size: 300%;
+} 
+
+.slidesContainer{
   height: 70%;
 }
 
-.student-spotlight-image {
-background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%), url('https://scontent.cdninstagram.com/t51.2885-15/e35/15876040_255712054859476_4055350641059430400_n.jpg');
+.gradient {
+z-index: 100;
+background-size: cover;
+}
+
+.gradient::after{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, black 100%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.studentImage {
+z-index: 1;
+position: absolute;
 background-size: cover;
 }
 
@@ -43,27 +64,21 @@ margin-bottom: 0%;
 padding-bottom: 0%;
 }
 
-.student-spotlight {
-z-index: 100;
-margin: 0;
-text-align: center;
-color: #fff;
-text-shadow: 1px 1px black;
-font-size: 250%;
-} 
-
-.slide-student {
-padding-top: 58%;
+.studentName {
+z-index: 200;
+position: absolute;
 padding-left: 3%;
-margin: 0%;
+bottom: 15%;
 color: #fff;
 text-shadow: 1px 1px black;
 font-size: 200%;
 }
 
-.slide-studentSchool{
+.studentSchool{
+z-index: 200;
+position: absolute;
 padding-left: 3%;
-margin: 0%;
+bottom: 6%;
 color: white;
 text-shadow: 1px 1px black;
 font-size: 120%;
