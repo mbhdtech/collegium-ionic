@@ -10,8 +10,6 @@ import { SlidesPage } from '../slides/slides';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-  }
       slides = [
     {
       studentName: "Mekhi Jones",
@@ -69,6 +67,32 @@ export class HomePage {
 
   ]
 
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+    //     for (let i = 0; i < 5; i++) {
+    //   this.cards.push( this.cards );
+    // }
+  //     doInfinite(infiniteScroll) {
+  //   console.log('Begin async operation');
+
+  //   setTimeout(() => {
+  //     for (let i = 0; i < 30; i++) {
+  //       this.items.push( this.items.length );
+  //     }
+
+  //     console.log('Async operation has ended');
+  //     infiniteScroll.complete();
+  //   }, 500);
+  // }
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
     presentModal(slide) {
     let modal = this.modalCtrl.create(SlidesPage, {
       slide: slide

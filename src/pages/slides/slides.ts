@@ -12,9 +12,6 @@ export class SlidesPage {
     this.slide = params.get('slide');
   }
 
-  ionViewDidLoad() {
-  }
-
   closeModal(){
     this.viewCtrl.dismiss();
   }
