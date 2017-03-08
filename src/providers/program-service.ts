@@ -21,17 +21,14 @@ export class ProgramService {
   }
 
   getProgramsLocalData() {
-    this.http.get('data/programs.json').map(res => res.json()).subscribe(programs => {
-      console.log(programs);
-      return programs;
-    });
+    return this.http.get('data/programs.json').map(res => res.json());
   }
 
-  getScholarshipLocalData() {
-    this.http.get('data/scholarships.json').map(res => res.json()).subscribe(scholarships => {
-      return scholarships;
-    });
-  }
+  // getScholarshipLocalData() {
+  //   this.http.get('data/scholarships.json').map(res => res.json()).subscribe(scholarships => {
+  //     return scholarships;
+  //   });
+  // }
 
 
 }

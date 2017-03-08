@@ -79,19 +79,26 @@ export class HomePage {
   ]
 
   students: any;
+  programs: any;
   
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public ProgramService: ProgramService )  {
   }
 
 ngOnInit(){
   this.getStudentsLocalData();
-  // this.ProgramService.getProgramsLocalData();
+  this.getProgramsLocalData();
   // this.ProgramService.getScholarshipLocalData();
 }
 
 getStudentsLocalData(){
   this.ProgramService.getStudentsLocalData().subscribe(response => {
     this.students = response;
+  })
+}
+
+getProgramsLocalData(){
+  this.ProgramService.getProgramsLocalData().subscribe(response => {
+    this.programs = response;
   })
 }
 
@@ -112,6 +119,7 @@ getStudentsLocalData(){
     });
     modal.present();
   }
+
 
 //Shows article when card clicked
  viewCard(card){
