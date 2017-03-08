@@ -7,7 +7,7 @@
   </ion-refresher>
   <h1 class="studentSpotlight"> Student Spotlight </h1>
   <ion-slides class="slidesContainer" pager>
-    <ion-slide *ngFor="let student of students" (click)="presentModal(slide);">
+    <ion-slide *ngFor="let student of students" (click)="presentModal(student);">
               <img class="studentImage" src={{student.image}} >
               <h2 class="studentName">{{student.name}}</h2>
               <p class="studentSchool">{{student.school}}</p>
@@ -16,7 +16,7 @@
   </ion-slides>
   
   <div class="cards">
-    <ion-card class="ion-card" *ngFor="let program of programs" (click)="viewCard(card);">
+    <ion-card class="ion-card" *ngFor="let program of programs" (click)="viewProgram(program);">
     <ion-card-content>
       <ion-card-title>
         {{program.Name}}

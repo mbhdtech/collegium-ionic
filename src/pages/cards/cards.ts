@@ -5,10 +5,10 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'cards.html'
 })
 export class CardsPage {
-  card: any;
+  program: any;
 
   constructor(public navCtrl: NavController, public params: NavParams) {
-    this.card = params.get('card');
+    this.program = params.get('program');
   }
 
 }

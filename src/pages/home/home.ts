@@ -128,6 +128,12 @@ getProgramsLocalData(){
     });
   }
 
+  viewProgram(program){
+    this.navCtrl.push(CardsPage,{
+      program: program
+    });
+  }
+
 //Sends article to save later
   sendToProfile(card){
     console.log('I hope you work')
