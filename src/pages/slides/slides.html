@@ -1,14 +1,14 @@
  <ion-header>
   <ion-navbar>
-    <ion-title style="display: inline;">{{slide.studentNameAndCity}}</ion-title>
+    <ion-title style="display: inline;">{{student.name}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="closeModal()"><ion-icon icon name="close"></ion-icon></button>
     </ion-buttons>
   </ion-navbar>
 
-<img class= "cards-content-image" src="{{slide.studentImage}}">
+<img class= "cards-content-image" src="{{student.image}}">
  
-<p class="cards-content-paragraph">{{slide.studentStory}}</p>
+<p class="cards-content-paragraph">{{student.article}}</p>
 
 
 </ion-header>

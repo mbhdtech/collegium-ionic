@@ -113,11 +113,19 @@ getProgramsLocalData(){
   }
 
   //Presents student success story when slide clicked 
-    presentModal(slide) {
+  //   presentModal(slide) {
+  //   let modal = this.modalCtrl.create(SlidesPage, {
+  //     slide: slide
+  //   });
+  //   modal.present();
+  // }
+
+  presentModal(student){
     let modal = this.modalCtrl.create(SlidesPage, {
-      slide: slide
+      student: student
     });
     modal.present();
+
   }
 
 
