@@ -6,11 +6,9 @@ import { NavController, NavParams, ViewController, ModalController } from 'ionic
   templateUrl: 'slides.html'
 })
 export class SlidesPage {
-  // slide: any;
   student: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public modalCtrl: ModalController, params: NavParams) {
-    // this.slide = params.get('slide');
     this.student = params.get('student');
   }
 
