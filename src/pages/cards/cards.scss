@@ -1,14 +1,24 @@
 page-cards {
 }
 
-.cards-content-image{
+ion-app.md [padding], ion-app.md [padding] .scroll-content{
+    padding: 0px !important;
+}
+
+
+.article{
 
 }
 
-.cards-content-heading-two{
-
+.article-image{
+position: relative;
+ width: 100%;
+ height: 50%;
 }
 
-.cards-content-paragraph{
+.article-heading{
+
+}
+.article-paragraph{
 
 }

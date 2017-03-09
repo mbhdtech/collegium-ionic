@@ -1,21 +1,19 @@
  <ion-header>
   <ion-navbar>
     <ion-title>For You</ion-title>
-        <ion-row no-padding>
-      <ion-col text-right>
-        <button ion-button clear small color="primary" icon-left>
-          <ion-icon name='share-alt'></ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
+        <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="ios-bookmark"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
-
-<img class= "cards-content-image" src="{{program.Image}}">
-
-<h2 class="cards-content-heading-two">{{program.Name}}</h2>
-
-<p class="cards-content-paragraph">{{program.Details}}</p>
-
 </ion-header>
-<ion-content padding>
+
+<ion-content padding class="article">
+  <img class="article-image" src="{{program.Image}}">
+
+<h2 class="article-heading">{{program.Name}}</h2>
+
+<p class="article-paragraph">{{program.Details}}</p>
+
 </ion-content>

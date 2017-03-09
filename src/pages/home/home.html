@@ -2,46 +2,53 @@
 </ion-header>
 
 <ion-content class="container">
-    <ion-refresher (ionRefresh)="doRefresh($event)">
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
   <h1 class="studentSpotlight"> Student Spotlight </h1>
+  
   <ion-slides class="slidesContainer" pager>
     <ion-slide *ngFor="let student of students" (click)="presentModal(student);">
-              <img class="studentImage" src={{student.image}} >
-              <h2 class="studentName">{{student.name}}</h2>
-              <p class="studentSchool">{{student.school}}</p>
-
+      <img class="studentImage" src={{student.image}}>
+      <h2 class="studentName">{{student.name}}</h2>
+      <p class="studentSchool">{{student.school}}</p>
     </ion-slide>
   </ion-slides>
-  
-  <div class="cards">
-    <ion-card class="ion-card" *ngFor="let program of programs" (click)="viewProgram(program);">
-    <ion-card-content>
-      <ion-card-title>
-        {{program.Name}}
-      </ion-card-title>
-      <p>
-        {{program.What}}
-      </p>
-    </ion-card-content>
 
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="primary" icon-left>
+  <div class="cards">
+    <ion-card class="ion-card" *ngFor="let program of programs">
+      
+      <img class="gradient" src="{{program.Image}}" (click)="viewProgram(program);"/>
+
+      <ion-card-content>
+        <ion-card-title (click)="viewProgram(program);">
+          {{program.Name}}
+        </ion-card-title>
+        <p (click)="viewProgram(program);">
+          {{program.Details}}
+        </p>
+      </ion-card-content>
+
+      <ion-row no-padding>
+        <ion-col>
+          <button ion-button clear small color="primary" icon-left>
           {{program.Type}}
         </button>
-      </ion-col>
-
-      <ion-col text-right>
-        <button ion-button clear small color="primary" icon-left>
-          <ion-icon name='share-alt'></ion-icon>
-          Share
+        </ion-col>
+        <ion-col text-right>
+          <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='bookmark'></ion-icon>
+          Save Later
         </button>
-      </ion-col>
-    </ion-row>
-   </ion-card>
-  
- </div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+     <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+  </div>
 
 </ion-content>

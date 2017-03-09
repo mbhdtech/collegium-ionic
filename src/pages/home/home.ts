@@ -13,6 +13,7 @@ export class HomePage {
 
   students: any;
   programs: any;
+  // scholarships: any;
   
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public ProgramService: ProgramService )  {
   }
@@ -20,21 +21,56 @@ export class HomePage {
 ngOnInit(){
   this.getStudentsLocalData();
   this.getProgramsLocalData();
-  // this.ProgramService.getScholarshipLocalData();
+  // this.getScholarshipLocalData();
 }
 
+
+/***************************
+****************************
+    STUDENT SPOTLIGHT
+****************************
+***************************/
+//Fetches JSON 'students' data and stores it to variable
 getStudentsLocalData(){
   this.ProgramService.getStudentsLocalData().subscribe(response => {
     this.students = response;
-    console.log(this.students);
   })
 }
 
+  // Shows student spotlight when slide clicked
+  presentModal(student){
+    let modal = this.modalCtrl.create(SlidesPage, {
+      student: student
+    });
+    modal.present();
+
+  }
+
+/***************************
+****************************
+        SUMMER PROGRAMS
+****************************
+***************************/
+//Fetches JSON 'programs' data and stores it to variable
 getProgramsLocalData(){
   this.ProgramService.getProgramsLocalData().subscribe(response => {
     this.programs = response;
   })
 }
+
+//Shows program when card clicked
+  viewProgram(program){
+    this.navCtrl.push(CardsPage,{
+      program: program
+    });
+  }
+
+// //Fetches JSON 'scholarship' data and stores it to variable
+// getScholarshipsLocalData(){
+//   this.ProgramService.getScholarshipLocalData().subscribe(response => {
+//     this.scholarships = response;
+//   })
+// }
 
 //Refreshes Page
   doRefresh(refresher) {
@@ -46,40 +82,19 @@ getProgramsLocalData(){
     }, 2000);
   }
 
-  //Presents student success story when slide clicked 
-  //   presentModal(slide) {
-  //   let modal = this.modalCtrl.create(SlidesPage, {
-  //     slide: slide
-  //   });
-  //   modal.present();
-  // }
+    doInfinite(infiniteScroll) {
+    console.log('Begin async operation');
 
-  presentModal(student){
-    let modal = this.modalCtrl.create(SlidesPage, {
-      student: student
-    });
-    modal.present();
+    setTimeout(() => {
+      for (let i = 0; i < 30; i++) {
+        this.programs.push( this.programs.length );
+      }
 
+      console.log('Async operation has ended');
+      infiniteScroll.complete();
+    }, 500);
   }
 
-
-//Shows article when card clicked
- viewCard(card){
-    this.navCtrl.push(CardsPage,{
-      card: card
-    });
-  }
-
-  viewProgram(program){
-    this.navCtrl.push(CardsPage,{
-      program: program
-    });
-  }
-
-//Sends article to save later
-  sendToProfile(card){
-    console.log('I hope you work')
-  }
 
 }
 
