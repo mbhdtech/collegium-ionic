@@ -1,0 +1,46 @@
+<ion-header color = "primary">
+  <ion-navbar color="primary">
+   <ion-toolbar color="primary">
+    <ion-searchbar (input)="getItems($event)"></ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<div class="cards">
+
+ <ion-card class="ion-card" *ngFor="let question of questions">
+   <ion-card-header>
+    <b>{{question.questionTitle}}</b>
+   </ion-card-header>
+   <ion-card-content>
+     {{question.questionContent}}
+   </ion-card-content>
+ 
+ <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="primary" icon-left></button>
+       </ion-col>
+
+ <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='share-alt'></ion-icon>
+          respond
+        </button>
+      </ion-col>
+    </ion-row>
+   </ion-card>
+
+  </div>
+
+
+
+
+
+<ion-fab right bottom> 
+  <button ion-fab mini (click)="launchSecondPage()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+
+
+</ion-content>

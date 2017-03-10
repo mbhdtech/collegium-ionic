@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{viewTitle}}</ion-title>
+        <ion-buttons end>
+            <button ion-button [disabled]="isToday" (click)="today()">Today</button>
+            <button ion-button (click)="changeMode('month')">M</button>
+            <button ion-button (click)="changeMode('week')">W</button>
+            <button ion-button (click)="changeMode('day')">D</button>
+            <button ion-button (click)="loadEvents()">Tasks</button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+ 
+<ion-content padding class="has-header">
+    <calendar [eventSource]="eventSource"
+              [calendarMode]="calendar.mode"
+              [currentDate]="calendar.currentDate"
+              (onCurrentDateChanged)="onCurrentDateChanged($event)"
+              (onEventSelected)="onEventSelected($event)"
+              (onTitleChanged)="onViewTitleChanged($event)"
+              (onTimeSelected)="onTimeSelected($event)"
+              step="30">
+    </calendar>
+
+<ion-card class="card"> 
+  <ion-card-header>
+   <b>Tomorrow's Tasks</b>
+  </ion-card-header>
+  <ion-card-content>
+<ul>
+  <li>Finish All Star Code Application.</li>
+  <li>Clean Room</li>
+</ul>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-fab right bottom> 
+  <button ion-fab mini (click)="launchSecondPage2()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+
+<ion-card class="card2">
+  <ion-card-header>
+    <b>Sunday's Task</b>
+  </ion-card-header>
+  <ion-card-content>
+    <ul>
+      <li>Review for Algebra Quiz</li>
+    </ul>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card class="card3">
+  <ion-card-header>
+    <b>Monday's Tasks</b>
+  </ion-card-header>
+  <ion-card-content>
+    <ul>
+    <li>Talk to College Counselor about SUNY Application</li>
+    </ul> 
+  </ion-card-content>
+</ion-card>
+
+</ion-content>
+
+
+

@@ -6,6 +6,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CardsPage } from '../pages/cards/cards';
 import { SlidesPage } from '../pages/slides/slides';
 import { ProgramService } from '../providers/program-service';
+import { QuestionsPage } from '../pages/questions/questions';
+import { NewquePage } from '../pages/newque/newque';
+import { NgCalendarModule } from 'ionic2-calendar';
+import { CalendarPage } from '../pages/calendar/calendar';
+import { TasksPage } from '../pages/task/task'
 
 
 @NgModule({
@@ -14,9 +19,14 @@ import { ProgramService } from '../providers/program-service';
     HomePage,
     TabsPage,
     CardsPage,
-    SlidesPage
+    SlidesPage,
+    NewquePage,
+    QuestionsPage,
+    CalendarPage,
+    TasksPage
   ],
   imports: [
+    NgCalendarModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -25,8 +35,12 @@ import { ProgramService } from '../providers/program-service';
     HomePage,
     TabsPage,
     CardsPage,
-    SlidesPage
+    SlidesPage,
+    NewquePage,
+    QuestionsPage,
+    CalendarPage,
+    TasksPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, ProgramService]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }, ProgramService]
 })
-export class AppModule {}
+export class AppModule { }
